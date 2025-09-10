@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 17)
 file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 add_executable(${CMAKE_PROJECT_NAME} "${MY_SOURCES}")
 
-target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC PROJECT_PATH="${CMAKE_CURRENT_SOURCE_DIR}/src") # Uncomment this line to setup for development
+target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC PROJECT_PATH="${CMAKE_CURRENT_SOURCE_DIR}/src/") # Uncomment this line to setup for development
 #target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC PROJECT_PATH="./shaders") # Uncomment this line to setup for production
 
 find_package(Vulkan REQUIRED)

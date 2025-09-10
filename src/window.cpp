@@ -1,5 +1,8 @@
 #include "window.hpp"
 
+// std
+#include <stdexcept>
+
 namespace crsp {
 	Window::Window(int w, int h, std::string name) : width{ w }, height{ h }, windowName{ name } {
 		initWindow();
@@ -9,6 +12,13 @@ namespace crsp {
 	{
 		glfwDestroyWindow(window);
 		glfwTerminate();
+	}
+
+	void Window::createWindowSurface(VkInstance instance, VkSurfaceKHR* surface)
+	{
+		if (glfwCreateWindowSurface(instance, window, nullptr, surface) != VK_SUCCESS) {
+			throw std::runtime_error("failed to create window surface");
+		}
 	}
 
 	void crsp::Window::initWindow()
