@@ -35,7 +35,7 @@ namespace crsp {
 
 		// Not copyable or moveable
 		CrspDevice(const CrspDevice&) = delete;
-		void operator=(const CrspDevice&) = delete;
+		CrspDevice operator=(const CrspDevice&) = delete;
 		CrspDevice(CrspDevice &&) = delete;
 		CrspDevice &operator=(CrspDevice &&) = delete;
 
